@@ -1,0 +1,110 @@
+- using nvim version 9.1
+
+============================================================== 
+======================== NEOVIM ==============================
+============================================================== 
+
+Source the file
+  - :so
+
+
+============================================================== 
+======================= FOLDING  =============================
+============================================================== 
+
+folding is built into neovim
+
+-- zf --
+in order to fold code you must first create a fold section
+    - this can be done in either normal or visual mode
+
+        - normal mode
+            - ex 'zfap' will create and fold the current paragraph under the cursor
+
+        - visual mode
+            - ex. Hightlight the desired fold and fold the section
+
+-- zo --
+to open the fold simply type zo near the folded section
+
+-- zc --
+to close the fold again simply type zc
+
+-- zR --
+if there is nesting folds you can type zR to unfold recursively
+
+
+-- play with example here --
+int myfunc(char[] string){
+    for(int i = 0; i < 10; i++){
+        while(true){
+            if(something == true){
+                print("Hello")
+            }
+            else{
+                print("bye")
+            }
+        }
+    }
+}
+
+
+
+
+============================================================== 
+======================== NETRW ==============================
+============================================================== 
+Open up default file explorer (netrw)
+  - :Explore
+
+Create a new file
+  % <filename>
+
+Create a new directory
+  d <directory name>
+
+
+============================================================== 
+===================== FILE STRUCTURE ========================= 
+============================================================== 
+  - lua
+    - tpool
+      - init.lua (settings for the user)
+      - remap.lua (remap settings for the user)
+      - packer.lua (Plugins for the user)
+
+  - init.lua (General settings for all users)
+
+============================================================== 
+====================== NVIM COMMANDS ========================= 
+============================================================== 
+See what action is responsible for a keybinding
+    - :map <S-j>
+
+============================================================== 
+========================== PACKER ============================ 
+============================================================== 
+
+-- You must run this or `PackerSync` whenever you make changes to your plugin configuration
+-- Regenerate compiled loader file
+:PackerCompile
+
+-- Remove any disabled or unused plugins
+:PackerClean
+
+-- Clean, then install missing plugins
+:PackerInstall
+
+-- Clean, then update and install plugins
+-- supports the `--preview` flag as an optional first argument to preview updates
+:PackerUpdate
+
+-- Perform `PackerUpdate` and then `PackerCompile`
+-- supports the `--preview` flag as an optional first argument to preview updates
+:PackerSync
+
+-- Show list of installed plugins
+:PackerStatus
+
+-- Loads opt plugin immediately
+:PackerLoad completion-nvim ale
