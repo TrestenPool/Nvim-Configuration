@@ -61,12 +61,3 @@
  vim.keymap.set({'n', 't'}, '<C-up>', ":lua require('tmux').resize_top()<Cr>")
  vim.keymap.set({'n', 't'}, '<C-right>', ":lua require('tmux').resize_right()<Cr>")
  vim.keymap.set({'n', 't'}, '<C-left>', ":lua require('tmux').resize_left()<Cr>")
-
- vim.keymap.set('n', '<C-left>', ':resize_left<Cr>')
- vim.keymap.set('n', '<C-down>', "<cmd>lua require('tmux').resize_down()<cr>")
- vim.keymap.set('n', '<C-up>', ':resize_up<Cr>')
-
- function something()
-    local x = vim.fn.getreg('"')
-     print("", x)
- end
