@@ -71,13 +71,6 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
-    -- Pretty Fold --
-    use{ 'anuvyklack/pretty-fold.nvim',
-        config = function()
-            require('pretty-fold').setup()
-        end
-    }
-
     -- buffer tabs --
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     use {
